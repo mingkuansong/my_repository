@@ -12,9 +12,9 @@ def desired_caps():
     # 获取完整路径
     yaml_path = os.path.join(yaml_dir, 'iqooneo5_conf.yaml')
     # 打开yaml文件
-    yaml_content = open(yaml_path, 'r', encoding='utf-8')
+    yaml_file = open(yaml_path, 'r', encoding='utf-8')
     # 解析yaml文件
-    data = yaml.load(yaml_content, Loader=yaml.FullLoader)
+    data = yaml.load(yaml_file, Loader=yaml.FullLoader)
 
     capabilities = {}
     capabilities['platformName'] = data['platformName']
@@ -25,7 +25,7 @@ def desired_caps():
     capabilities['appActivity'] = 'com.tencent.mobileqq.activity.SplashActivity'
     capabilities['noRest'] = 'false'
 
-    yaml_content.close()
+    yaml_file.close()
 
     appium_server_url = 'http://127.0.0.1:4723/wd/hub'
 
