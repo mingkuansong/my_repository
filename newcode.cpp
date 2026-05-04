@@ -8,3 +8,7 @@ int main(){
 	cout << "我是协作伙伴（mksming）添加的代码" << endl;
 	return 0;
 };
+
+void my_add(int a, int b){
+    cout << a + b << endl;
+}
